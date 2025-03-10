@@ -2,5 +2,5 @@
 
 public interface IMediator
 {
-    TResponse Send<TRequest, TResponse>(TRequest request) where TRequest : IRequest<TResponse>;
+    TResponse Send<TRequest, TResponse>(TRequest request) where TRequest : IRequest;
 }

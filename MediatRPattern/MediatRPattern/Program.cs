@@ -11,7 +11,7 @@ public class Program
         BackendDeveloper backendDeveloper = new(mediator);
         FrontendDeveloper frontendDeveloper = new(mediator);
         QA qa = new(mediator);
-
+       
         mediator.BackendDeveloper = backendDeveloper;
         mediator.FrontendDeveloper = frontendDeveloper;
         mediator.QA = qa;

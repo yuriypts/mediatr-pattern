@@ -1,9 +1,8 @@
-﻿using ImplementationMediatorPattern.Entities;
-using ImplementationMediatorPattern.MediatorStructure;
+﻿using ImplementationMediatorPattern.MediatorStructure;
 
 namespace ImplementationMediatorPattern.ManagerStructure;
 
-public class DeveloperQuery : IRequest<Developer>
+public class DeveloperQuery : IRequest
 {
     public int Id { get; }
     public string Name { get; set; }

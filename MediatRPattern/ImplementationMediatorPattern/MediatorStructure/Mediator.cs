@@ -4,12 +4,12 @@ public class Mediator : IMediator
 {
     private readonly Dictionary<Type, object> _handlers = new();
 
-    public void Register<TRequest, TResponse>(IRequestHandler<TRequest, TResponse> requestHandler) where TRequest : IRequest<TResponse>
+    public void Register<TRequest, TResponse>(IRequestHandler<TRequest, TResponse> requestHandler) where TRequest : IRequest
     {
         _handlers.Add(typeof(TRequest), requestHandler);
     }
 
-    public TResponse Send<TRequest, TResponse>(TRequest request) where TRequest : IRequest<TResponse>
+    public TResponse Send<TRequest, TResponse>(TRequest request) where TRequest : IRequest
     {
         if (_handlers.TryGetValue(typeof(TRequest), out var handlerObj))
         {
