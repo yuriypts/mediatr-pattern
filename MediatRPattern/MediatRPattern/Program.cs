@@ -8,11 +8,11 @@ public class Program
     static void Main(string[] args)
     {
         Mediator mediator = new();
-        
+
         BackendDeveloper backendDeveloper = new(mediator);
         FrontendDeveloper frontendDeveloper = new(mediator);
         QA qa = new(mediator);
-       
+
         mediator.BackendDeveloper = backendDeveloper;
         mediator.FrontendDeveloper = frontendDeveloper;
         mediator.QA = qa;

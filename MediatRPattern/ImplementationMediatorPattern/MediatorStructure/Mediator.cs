@@ -6,6 +6,11 @@ public class Mediator : IMediator
 
     public void Register<TRequest, TResponse>(IRequestHandler<TRequest, TResponse> requestHandler) where TRequest : IRequest
     {
+        if (_handlers.Any(h => h.Key == typeof(TRequest)))
+        {
+            throw new ArgumentException($"Handler for {typeof(TRequest)} already registered");
+        }
+
         _handlers.Add(typeof(TRequest), requestHandler);
     }
 
