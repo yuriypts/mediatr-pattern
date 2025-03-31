@@ -2,7 +2,7 @@
 
 namespace MediatRPattern.ManagerStructure;
 
-public class Manager
+public abstract class Manager
 {
     protected readonly AbstractMediator _mediator;
 
