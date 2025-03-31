@@ -7,7 +7,8 @@ public class Program
 {
     static void Main(string[] args)
     {
-        Mediator mediator = new Mediator();
+        Mediator mediator = new();
+        
         BackendDeveloper backendDeveloper = new(mediator);
         FrontendDeveloper frontendDeveloper = new(mediator);
         QA qa = new(mediator);
