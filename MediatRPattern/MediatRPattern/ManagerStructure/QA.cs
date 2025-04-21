@@ -11,5 +11,7 @@ public class QA : Manager
     public void Test(string msg)
     {
         Console.WriteLine(msg);
+
+        _mediator.Send(msg, this);
     }
 }

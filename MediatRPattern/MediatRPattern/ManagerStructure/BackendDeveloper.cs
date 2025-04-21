@@ -11,5 +11,7 @@ public class BackendDeveloper : Manager
     public void Develop(string msg)
     {
         Console.WriteLine(msg);
+
+        _mediator.Send(msg, this);
     }
 }

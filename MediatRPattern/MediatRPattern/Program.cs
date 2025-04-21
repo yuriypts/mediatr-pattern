@@ -17,9 +17,9 @@ public class Program
         mediator.FrontendDeveloper = frontendDeveloper;
         mediator.QA = qa;
 
-        mediator.Send("Backend Developer", backendDeveloper);
-        mediator.Send("Backend Developer", frontendDeveloper);
-        mediator.Send("QA", qa);
+        Console.WriteLine("Backend Developer Started Work");
+
+        backendDeveloper.Develop("Backend Developer End Work");
 
         Console.WriteLine("Hello, World!");
     }

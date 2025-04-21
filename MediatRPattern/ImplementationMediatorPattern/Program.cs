@@ -10,18 +10,18 @@ internal class Program
     {
         Mediator mediator = new();
 
-        mediator.Register<DeveloperQuery, Developer>(new DeveloperHandler());
+        mediator.Register<WorkerQuery, Worker>(new WorkerHandler());
 
-        List<DeveloperQuery> developerQueries = new()
+        List<WorkerQuery> developerQueries = new()
         {
-            new DeveloperQuery(1, "BackendDeveloper"),
-            new DeveloperQuery(2, "FrontendDeveloper"),
-            new DeveloperQuery(3, "QA")
+            new WorkerQuery(1, "BackendDeveloper"),
+            new WorkerQuery(2, "FrontendDeveloper"),
+            new WorkerQuery(3, "QA")
         };
 
-        foreach (DeveloperQuery developerQuery in developerQueries)
+        foreach (WorkerQuery developerQuery in developerQueries)
         {
-            Developer response = mediator.Send<DeveloperQuery, Developer>(developerQuery);
+            Worker response = mediator.Send<WorkerQuery, Worker>(developerQuery);
             Console.WriteLine("Id - {0}, Name - {1}", response.Id, response.Name);
         }
 

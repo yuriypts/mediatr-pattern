@@ -12,19 +12,13 @@ public class Mediator : AbstractMediator
     {
         if (manager is BackendDeveloper)
         {
-            BackendDeveloper.Develop(msg);
+            Console.WriteLine("Frontend Developer Started Work");
+            FrontendDeveloper.Develop("Fronted Developer End Work");
         }
         else if (manager is FrontendDeveloper)
         {
-            FrontendDeveloper.Develop(msg);
-        }
-        else if (manager is QA)
-        {
-            QA.Test(msg);
-        }
-        else
-        {
-            throw new ArgumentException("Invalid Manager");
+            Console.WriteLine("QA Started Work");
+            QA.Test("QA End Work");
         }
     }
 }

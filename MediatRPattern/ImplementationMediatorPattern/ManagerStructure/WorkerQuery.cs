@@ -2,12 +2,12 @@
 
 namespace ImplementationMediatorPattern.ManagerStructure;
 
-public class DeveloperQuery : IRequest
+public class WorkerQuery : IRequest
 {
     public int Id { get; }
     public string Name { get; set; }
 
-    public DeveloperQuery(int id, string name)
+    public WorkerQuery(int id, string name)
     {
         Id = id;
         Name = name;

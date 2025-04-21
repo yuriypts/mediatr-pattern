@@ -3,11 +3,11 @@ using ImplementationMediatorPattern.MediatorStructure;
 
 namespace ImplementationMediatorPattern.ManagerStructure;
 
-public class DeveloperHandler : IRequestHandler<DeveloperQuery, Developer>
+public class WorkerHandler : IRequestHandler<WorkerQuery, Worker>
 {
-    public Developer Handle(DeveloperQuery request)
+    public Worker Handle(WorkerQuery request)
     {
-        return new Developer
+        return new Worker
         {
             Id = request.Id,
             Name = request.Name
