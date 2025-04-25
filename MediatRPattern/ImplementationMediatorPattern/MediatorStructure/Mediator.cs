@@ -1,8 +1,10 @@
-﻿namespace ImplementationMediatorPattern.MediatorStructure;
+﻿using System.Collections.Concurrent;
+
+namespace ImplementationMediatorPattern.MediatorStructure;
 
 public class Mediator : IMediator
 {
-    private readonly Dictionary<Type, object> _handlers = new();
+    private readonly ConcurrentDictionary<Type, object> _handlers = new();
 
     public void Register<TRequest, TResponse>(IRequestHandler<TRequest, TResponse> requestHandler) where TRequest : IRequest
     {
@@ -11,7 +13,7 @@ public class Mediator : IMediator
             throw new ArgumentException($"Handler for {typeof(TRequest)} already registered");
         }
 
-        _handlers.Add(typeof(TRequest), requestHandler);
+        _handlers.TryAdd(typeof(TRequest), requestHandler);
     }
 
     public TResponse Send<TRequest, TResponse>(TRequest request) where TRequest : IRequest
