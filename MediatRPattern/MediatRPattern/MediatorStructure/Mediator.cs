@@ -20,5 +20,9 @@ public class Mediator : AbstractMediator
             Console.WriteLine("QA Started Work");
             QA.Test("QA End Work");
         }
+        else if (manager is QA)
+        {
+            Console.WriteLine("QA - Done");
+        }
     }
 }
